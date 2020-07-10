@@ -1,0 +1,122 @@
+<h1 class="heading">
+    Temperature converter
+</h1>
+
+<form>
+    <fieldset>
+        <label class="row" for="conversion-nr">
+            Insert temperature number to convert
+        </label>
+        <input
+            id="conversion-nr"
+            type="number"
+            name="conversion-nr"
+            placeholder="Num"
+            aria-placeholder="Num"
+            [(ngModel)]="temp"
+            (input)="convert(temp, from)"
+        >
+
+        <div class="row">
+            Select temperature degree
+        </div>
+
+        <div class="row">
+            <label class="label">
+                <input
+                    type="radio"
+                    name="from"
+                    value="Celsius"
+                    [(ngModel)]="from"
+                    (ngModelChange)="convert(temp, from)"
+                >
+                <span class="degree">
+                    Celsius <span class="hidden-md-up">(C°)</span>
+                </span>
+            </label>
+
+            <label class="label">
+                <input
+                    type="radio"
+                    name="from"
+                    value="Fahrenheit"
+                    [(ngModel)]="from"
+                    (ngModelChange)="convert(temp, from)"
+                >
+                <span class="degree">
+                    Fahrenheit <span class="hidden-md-up">(F°)</span>
+                </span>
+            </label>
+
+            <label class="label">
+                <input
+                    type="radio"
+                    name="from"
+                    value="Kelvin"
+                    [(ngModel)]="from"
+                    (ngModelChange)="convert(temp, from)"
+                >
+                <span class="degree">
+                    Kelvin <span class="hidden-md-up">(K°)</span>
+                </span>
+            </label>
+
+            <label class="label">
+                <input
+                    type="radio"
+                    name="from"
+                    value="Rankine"
+                    [(ngModel)]="from"
+                    (ngModelChange)="convert(temp, from)"
+                >
+                <span class="degree">
+                    Rankine <span class="hidden-md-up">(R°)</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+</form>
+
+<section class="conversion-results">
+    <div class="conversion-results__heading">
+        {{ temp ? temp + '°' : '' }} {{ from }} correspond to
+    </div>
+
+    <div class="conversion-results__table">
+        <div class="conversion-results__row">
+            <span class="conversion-results__row--degree">
+                Celsius
+            </span>
+            <span class="conversion-results__row--result">
+                {{ celsius }}
+            </span>
+        </div>
+    
+        <div class="conversion-results__row">
+            <span class="conversion-results__row--degree">
+                Fahrenheit
+            </span>
+            <span class="conversion-results__row--result">
+                {{ fahrenheit }}
+            </span>
+        </div>
+    
+        <div class="conversion-results__row">
+            <span class="conversion-results__row--degree">
+                Kelvin
+            </span>
+            <span class="conversion-results__row--result">
+                {{ kelvin }}
+            </span>
+        </div>
+    
+        <div class="conversion-results__row">
+            <span class="conversion-results__row--degree">
+                Rankine
+            </span>
+            <span class="conversion-results__row--result">
+                {{ rankine }}
+            </span>
+        </div>
+    </div>
+</section>

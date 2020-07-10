@@ -1,0 +1,155 @@
+@import '~src/styles.scss';
+
+$box-shadow: 0 rem(3) rem(11) 0 rgba(0, 0, 0, .15);
+$box-shadow-hover: 0 rem(3) rem(11) 0 rgba(0, 0, 0, .35);
+
+.heading {
+    font-size: rem(48);
+    color: $light-blue;
+    text-align: center;
+}
+
+form {
+    font-size: rem(32);
+    margin: rem(32) 0;
+    text-align: center;
+}
+
+.row {
+    display: block;
+    margin: rem(16) 0;
+}
+
+#conversion-nr {
+    @include box-shadow-defined($box-shadow);
+    @include transition(all, 0.2s, ease-out);
+    display: block;
+    font-size: rem(120);
+    color: $red;
+    line-height: 1.2;
+    margin: 0 auto;
+    padding: rem(32);
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+        @include box-shadow-defined($box-shadow-hover);
+        @include transition(all, 0.2s, ease-in);
+    }
+}
+
+.label {
+    @include box-shadow-defined($box-shadow);
+    @include transition(all, 0.2s, ease-out);
+    @include user-select;
+    display: inline-block;
+    background-color: $whiteF8;
+    border: rem(1) solid $light-grey;
+    border-radius: rem(6);
+    cursor: pointer;
+    margin: rem(8);
+    padding: rem(16);
+
+    &:hover {
+        @include box-shadow-defined($box-shadow-hover);
+        @include transition(all, 0.2s, ease-in);
+    }
+}
+
+input[type=radio] {
+    display: none;
+
+    &:checked + .degree {
+        color: $red;
+    }
+}
+
+.conversion-results {
+    font-size: rem(32);
+    text-align: center;
+
+    &__table {
+        display: table;
+        width: 100%;
+    }
+
+    &__row {
+        display: table-row;
+        width: 100%;
+
+        &--degree,
+        &--result {
+            display: table-cell;
+            width: 50%;
+        }
+
+        &--degree {
+            color: $light-blue;
+            text-align: left;
+        }
+        &--result {
+            color: $green;
+            text-align: right;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #conversion-nr {
+        font-size: rem(128);
+        max-width: rem(512);
+    }
+
+    .degree {
+        display: block;
+        background-position: center 40%; // If using 'Segoe Script' fonts bg img -> center only. If using 'Merienda' fonts bg img -> center 120%
+        background-repeat: no-repeat;
+        background-size: rem(320); // If using 'Segoe Script' fonts bg img -> 256. If using 'Merienda' -> 228
+        height: rem(256);
+        width: rem(256);
+
+        > .hidden-md-up {
+            display: none;
+        }
+    }
+
+    input[value=Celsius] {
+        & + .degree {
+            background-image: url('/assets/images/Celsius-bubblegum-grey.png');
+        }
+
+        &:checked + .degree {
+            background-image: url('/assets/images/Celsius-bubblegum-red.png');
+        }
+    }
+
+    input[value=Fahrenheit] {
+        & + .degree {
+            background-image: url('/assets/images/Fahrenheit-bubblegum-grey.png');
+        }
+
+        &:checked + .degree {
+            background-image: url('/assets/images/Fahrenheit-bubblegum-red.png');
+        }
+    }
+
+    input[value=Kelvin] {
+        & + .degree {
+            background-image: url('/assets/images/Kelvin-bubblegum-grey.png');
+        }
+
+        &:checked + .degree {
+            background-image: url('/assets/images/Kelvin-bubblegum-red.png');
+        }
+    }
+
+    input[value=Rankine] {
+        & + .degree {
+            background-image: url('/assets/images/Rankine-bubblegum-grey.png');
+        }
+
+        &:checked + .degree {
+            background-image: url('/assets/images/Rankine-bubblegum-red.png');
+        }
+    }
+}
