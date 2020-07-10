@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/main.scss";
+
+body {
+    @extend %base-font;
+    background: #eee;
+    line-height: $base-line-height;
+    place-items: center;
+}
+
+figure {
+    margin: 0;
+}
