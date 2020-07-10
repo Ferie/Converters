@@ -1,0 +1,40 @@
+<div>
+    Temperatura:
+    <input
+        type="text"
+        [(ngModel)]="temp"
+        (input)="convertitore(temp, from, to)"
+    >
+</div>
+
+<div>
+    From:
+    <select
+        name="from"
+        [(ngModel)]="from"
+        (change)="convertitore(temp, from, to)"
+    >
+        <option value="Celsius">Celsius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+        <option value="Rankine">Rankine</option>
+    </select>
+</div>
+
+<div>
+    To:
+    <select
+        name="to"
+        [(ngModel)]="to"
+        (change)="convertitore(temp, from, to)"
+    >
+        <option value="Celsius">Celsius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+        <option value="Rankine">Rankine</option>
+    </select>
+</div>
+
+<div>
+    Valore di temperatura convertito: {{ result }}
+</div>
