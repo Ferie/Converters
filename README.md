@@ -1,4 +1,19 @@
-# converters
+# Converters
+
+This project would become a complex general conversion app.
+
+## Converters that are working at the moment
+
+* Temperature converter
+
+## Converters to be develop
+
+* Distances converter
+* Areas converter
+* Weights converter
+
+
+---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
