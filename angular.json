@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "ConvertitoreTemperature": {
+        "converters": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/ConvertitoreTemperature",
+                        "outputPath": "dist/converters",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "ConvertitoreTemperature:build"
+                        "browserTarget": "converters:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "ConvertitoreTemperature:build:production"
+                            "browserTarget": "converters:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "ConvertitoreTemperature:build"
+                        "browserTarget": "converters:build"
                     }
                 },
                 "test": {
@@ -110,16 +110,16 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "ConvertitoreTemperature:serve"
+                        "devServerTarget": "converters:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "ConvertitoreTemperature:serve:production"
+                            "devServerTarget": "converters:serve:production"
                         }
                     }
                 }
             }
         }
     },
-    "defaultProject": "ConvertitoreTemperature"
+    "defaultProject": "converters"
 }
