@@ -1,7 +1,12 @@
 {
     "name": "converters",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "Riccardo Andreatta",
+    "keywords": [
+        "converters",
+        "temperature converter",
+        "angular"
+    ],
     "scripts": {
         "ng": "ng",
         "build": "ng build",
@@ -14,7 +19,6 @@
         "heroku:deploy-master": "git push origin master && git push heroku master",
         "postinstall": "npm run build:prod"
     },
-    "private": true,
     "dependencies": {
         "@angular/animations": "~9.1.9",
         "@angular/common": "~9.1.9",
